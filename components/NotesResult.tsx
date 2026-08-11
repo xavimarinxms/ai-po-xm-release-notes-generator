@@ -29,7 +29,9 @@ function NoteView({ notes, productName, version }: { notes: AudienceNotes; produ
   const [copied, setCopied] = useState(false);
 
   const copy = () => {
-    navigator.clipboard.writeText(toMarkdown(notes, productName, version));
+    navigator.clipboard?.writeText(toMarkdown(notes, productName, version)).catch(() => {
+      /* Clipboard API blocked (e.g. embedded iframe without permission) — fail silently. */
+    });
     setCopied(true); setTimeout(() => setCopied(false), 2000);
   };
 
@@ -84,7 +86,9 @@ export default function NotesResult({ notes, productName, version }: { notes: Ge
 
   const copyAll = () => {
     const all = TABS.map(t => `<!-- ${t.label} -->\n${toMarkdown(notes[t.key], productName, version)}`).join('\n---\n\n');
-    navigator.clipboard.writeText(all);
+    navigator.clipboard?.writeText(all).catch(() => {
+      /* Clipboard API blocked (e.g. embedded iframe without permission) — fail silently. */
+    });
   };
 
   return (

@@ -22,7 +22,8 @@ export default function NotesForm({ values, onChange, onSubmit, loading }: Props
       <div className="flex items-center justify-between">
         <h2 className="text-sm font-semibold text-gray-900">Release details</h2>
         <button onClick={() => onChange(SAMPLE_INPUT)}
-          className="text-xs font-medium text-brand-700 bg-brand-50 hover:bg-brand-100 border border-brand-300 rounded-lg px-3 py-1.5 transition-colors">
+          className="text-xs font-medium text-brand-700 bg-brand-50 hover:bg-brand-100 border border-brand-300 rounded-lg px-3 py-1.5 transition-colors"
+          data-tour="sample">
           ✨ Sample data
         </button>
       </div>
@@ -61,7 +62,8 @@ export default function NotesForm({ values, onChange, onSubmit, loading }: Props
 
       <button onClick={onSubmit}
         disabled={loading || !values.productName || !values.version || !values.changes}
-        className="w-full bg-brand-500 hover:bg-brand-600 text-white text-sm font-semibold rounded-xl py-3 px-6 transition-colors shadow-sm disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center gap-2">
+        className="w-full bg-brand-500 hover:bg-brand-600 text-white text-sm font-semibold rounded-xl py-3 px-6 transition-colors shadow-sm disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+        data-tour="run">
         {loading
           ? <><svg className="animate-spin w-4 h-4" viewBox="0 0 24 24" fill="none"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"/><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"/></svg>Generating 3 versions…</>
           : '✦ Generate release notes'}

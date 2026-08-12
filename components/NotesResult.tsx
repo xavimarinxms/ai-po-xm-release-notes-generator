@@ -48,7 +48,7 @@ function NoteView({ notes, productName, version }: { notes: AudienceNotes; produ
           <h3 className="text-base font-semibold text-gray-900">{notes.title}</h3>
           <p className="text-sm text-gray-500 mt-1 leading-relaxed">{notes.intro}</p>
         </div>
-        <div className="flex gap-2 shrink-0">
+        <div className="flex gap-2 shrink-0" data-tour="export">
           <button onClick={copy} className="text-xs font-medium text-gray-600 hover:text-gray-900 bg-gray-100 hover:bg-gray-200 border border-gray-200 rounded-lg px-3 py-1.5 transition-colors">
             {copied ? '✓ Copied' : 'Copy MD'}
           </button>

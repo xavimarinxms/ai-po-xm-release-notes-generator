@@ -66,12 +66,12 @@ function DemoPageInner() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-2" data-tour="input">
             <NotesForm values={input} onChange={setInput} onSubmit={generate} loading={loading} />
             {error && <p className="text-xs text-red-600 mt-3">{error}</p>}
           </div>
 
-          <div className="lg:col-span-3">
+          <div className="lg:col-span-3" data-tour="results">
             {!notes && !loading && (
               <div className="bg-white rounded-xl border border-gray-200 border-dashed p-12 text-center h-48 flex flex-col items-center justify-center">
                 <p className="text-sm text-gray-400">3 versions will appear here</p>

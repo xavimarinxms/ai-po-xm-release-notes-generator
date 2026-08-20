@@ -56,7 +56,7 @@ function DemoPageInner() {
       </nav>}
 
       <div className="bg-blue-50 border-b border-blue-100 px-4 py-2.5 text-center text-xs text-blue-700 font-medium">
-        Demo mode — generates 3 versions in parallel via Groq + Llama 3.3
+        Demo mode — generates 3 versions in parallel via Groq + GPT-OSS 120B
       </div>
 
       <main className="flex-1 max-w-5xl mx-auto w-full px-6 py-10">
